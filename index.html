@@ -241,9 +241,9 @@
                     <div class="forms__column">
                         <div class="inputs">
                             <div class="input1">
-                                <input type="text" placeholder="Имя*" class="_req" name="named" id="name"
+                                <input type="text" placeholder="Имя*" class="_req" name="named" id="formName"
                                     maxlength="15">
-                                <input type="text" placeholder="Фамилия*" class="_req" name="surname" id="surname"
+                                <input type="text" placeholder="Фамилия*" class="_req" name="surname" id="formSurname"
                                     maxlength="15">
                             </div>
                             <div class="input2">
@@ -271,7 +271,7 @@
         <footer class="footer">
             <div class='container'>
                 <div class="footer__body">
-                    <div class="footer__copyright">
+                    <div class="footer__copyright" id="popupClose">
                         “Компетентность в компетенциях” © 2021 Все права защищены
                     </div>
                     <div class="footer__social">
@@ -288,17 +288,17 @@
     <div class="popup" id="popup">
         <div class="popup__body">
             <div class="popup__content">
-                <img class="popup__close"
+                <img class="popup__close" id="popupClose"
                     src="https://www.clipartmax.com/png/full/420-4204636_yin-yang-yin-and-yang-pixel-art.png">
                 <div class="popup__title">Уведомление</div>
                 <div class="popup__text">Файл должен быть менее 2 МБ.</div>
             </div>
         </div>
     </div>
-    <div class="popup1" id="popup1">
+    <div id="popup1">
         <div class="popup__body">
             <div class="popup__content">
-                <img class="popup__close"
+                <img class="popup__close" id="popupClose"
                     src="https://www.clipartmax.com/png/full/420-4204636_yin-yang-yin-and-yang-pixel-art.png">
                 <div class="popup__title">Уведомление</div>
                 <div class="popup__text">Разрешены только изображения.</div>
@@ -308,7 +308,7 @@
     <div class="popup2" id="popup2">
         <div class="popup__body">
             <div class="popup__content">
-                <img class="popup__close"
+                <img class="popup__close" id="popupClose"
                     src="https://www.clipartmax.com/png/full/420-4204636_yin-yang-yin-and-yang-pixel-art.png">
                 <div class="popup__title">Уведомление</div>
                 <div class="popup__text">Что-то пошло не так.</div>

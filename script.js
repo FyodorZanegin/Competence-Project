@@ -67,15 +67,6 @@ $(document).ready(function () {
 
 
 
-  // Popup Close
-
-
-  $('.popup__close').click(function () {
-    $('.popup, .popup1, .popup2, .popup3').fadeOut(300);
-  });
-
-
-
   // Phone Mask
 
 
@@ -190,7 +181,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function uploadFile(file) {
     if (!['image/jpeg', 'image/png', 'image/gif'].includes(file.type)) {
-      $('.popup1').fadeIn(300);
+      popup1.style.cssText = `
+      z-index: 100;
+      opacity: 1;
+      `;
       formImage.value = '';
       return;
     }
@@ -206,25 +200,36 @@ document.addEventListener("DOMContentLoaded", function () {
     // File Preview
 
 
-    var reader = new FileReader();
-    reader.onload = function (e) {
+    let formPhoto = new FileReader();
+
+    formPhoto.onload = function (e) {
       formPreview.innerHTML = `<img src="${e.target.result}">`;
     };
 
-    reader.onerror = function (e) {
+    formPhoto.onerror = function (e) {
       $('.popup2').fadeIn(300);
     };
 
-    reader.readAsDataURL(file);
+    formPhoto.readAsDataURL(file);
   }
+
+
+
+  // Popup Close
+
+
+  popupClose.onclick = function () {
+    
+    alert('sdsd');
+  };
 
 
 
   // Name Validation
 
 
-  document.querySelector('#name').addEventListener('keyup', function () {
-    this.value = this.value.replace(/[^\А-ЯЁа-яё]/g, '');
+  formName.addEventListener('keyup', function () {
+    this.value = this.value.replace(/[^А-ЯЁа-яё]/g, '');
   });
 
 
@@ -232,8 +237,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // Surname Validation
 
 
-  document.querySelector('#surname').addEventListener('keyup', function () {
-    this.value = this.value.replace(/[^\А-ЯЁа-яё]/g, '');
+  formSurname.addEventListener('keyup', function () {
+    this.value = this.value.replace(/[^А-ЯЁа-яё]/g, '');
   });
 
 

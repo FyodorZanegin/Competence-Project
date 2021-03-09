@@ -962,7 +962,7 @@ input[type="button"]:active, input[type="button"]:focus {
 }
 
 
-#name {
+#formName {
     margin: 0px 15px 0px 7.5px;
 }
 
@@ -1225,7 +1225,7 @@ input[type="button"]:active, input[type="button"]:focus {
         margin: auto auto 15px auto;
     }
 
-    #name {
+    #formName {
     margin: 0px 15px 0px 0px;
     }
 
@@ -1916,17 +1916,18 @@ form._sending::after {
 /* Second Popup */
 
 
-.popup1 {
+#popup1 {
     position: fixed;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     top: 0;
     left: 0;
-    z-index: 100;
     overflow-y: auto;
     overflow-x: hidden;
-    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease 0s;
+    z-index: -100;
 }
 
 .popup2 {
@@ -2052,9 +2053,6 @@ form._sending::after {
     .services__subtitle {
         margin-bottom: 30px;
     }
-
-    
-
 
     .portfolio__title {
         margin-top: 15px;
