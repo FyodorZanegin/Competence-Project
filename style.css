@@ -1426,7 +1426,7 @@ input[type="button"]:active, input[type="button"]:focus {
         width: 100%;
     }
 
-    .cards2:before, .services__bgBlue:before, .services__manBg:before, .services__assBg:before, .services__bgRed:before, .services__bgGreen:before  {
+    .cards2:before, .services__bgBlue:before, .services__manBg:before, .services__assBg:before, .services__bgRed:before, .services__bgGreen:before, .services__medBg:before {
         width: 100%;
         z-index: -1;
     }
@@ -1443,7 +1443,7 @@ input[type="button"]:active, input[type="button"]:focus {
         width: 100%;
     }
 
-    .cards2:before, .services__bgBlue:before, .services__manBg:before, .services__assBg:before, .services__bgRed:before, .services__bgGreen:before  {
+    .cards2:before, .services__bgBlue:before, .services__manBg:before, .services__assBg:before, .services__bgRed:before, .services__bgGreen:before, .services__medBg:before {
         z-index: 1;
     }
 }
@@ -2045,7 +2045,7 @@ form._sending::after {
         margin-right: 30px;
     }
 
-    .services__title {
+    .services__assBg, .services__manBg, .services__medBg {
         padding-top: 60px;
     }
 
