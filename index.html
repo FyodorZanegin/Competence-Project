@@ -12,8 +12,9 @@
     <script type="text/javascript" src="script.js"></script>
     <script type="text/javascript" src="slick.min.js"></script>
     <script src="https://kit.fontawesome.com/5563ec9008.js" crossorigin="anonymous"></script>
-    <link href="https://kit-pro.fontawesome.com/releases/v5.15.1/css/pro.min.css" rel="stylesheet">
     <script type="text/javascript" src="jquery.maskedinput.min.js"></script>
+    <link href="https://kit-pro.fontawesome.com/releases/v5.15.1/css/pro.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -25,10 +26,10 @@
                         <span style='color: #3D79B0;'>К</span><span style='font-size: 20px; color: #000;'>&</span><span
                             style='color:#BC2943;'>К</span>
                     </a>
-                    <div class="header__burger">
+                    <div class="header__burger" id="header__burger">
                         <span></span>
                     </div>
-                    <nav class="header__menu">
+                    <nav class="header__menu" id="header__menu">
                         <ul class="header__list">
                             <li><a class="header__link" href="index.html">
                                     <p style="color: #3D79B0;">Главная</p>
@@ -232,9 +233,9 @@
                     <div class="forms__column">
                         <div class="form__textarea">
                             <div class="form__textareaa">
-                                <textarea placeholder="Сообщение..." class="_req" name="message"
-                                    maxlength="1000"></textarea>
-                                <div class="counter"><span></span>/1000</div>
+                                <textarea id="countdownTextarea" placeholder="Сообщение..." class="_req" name="message"
+                                    maxlength="500"></textarea>
+                                <div class="counter"><span id="count">500</span>/500</div>
                             </div>
                         </div>
                     </div>
@@ -271,7 +272,7 @@
         <footer class="footer">
             <div class='container'>
                 <div class="footer__body">
-                    <div class="footer__copyright" id="popupClose">
+                    <div class="footer__copyright">
                         “Компетентность в компетенциях” © 2021 Все права защищены
                     </div>
                     <div class="footer__social">
@@ -285,40 +286,40 @@
             </div>
         </footer>
     </div>
-    <div class="popup" id="popup">
+    <div class="popup" id="popup1">
         <div class="popup__body">
             <div class="popup__content">
-                <img class="popup__close" id="popupClose"
+                <img class="popup__close" onclick="popupClose()"
                     src="https://www.clipartmax.com/png/full/420-4204636_yin-yang-yin-and-yang-pixel-art.png">
                 <div class="popup__title">Уведомление</div>
                 <div class="popup__text">Файл должен быть менее 2 МБ.</div>
             </div>
         </div>
     </div>
-    <div id="popup1">
+    <div class="popup1" id="popup2">
         <div class="popup__body">
             <div class="popup__content">
-                <img class="popup__close" id="popupClose"
+                <img class="popup__close" onclick="popupClose()"
                     src="https://www.clipartmax.com/png/full/420-4204636_yin-yang-yin-and-yang-pixel-art.png">
                 <div class="popup__title">Уведомление</div>
                 <div class="popup__text">Разрешены только изображения.</div>
             </div>
         </div>
     </div>
-    <div class="popup2" id="popup2">
+    <div class="popup2" id="popup3">
         <div class="popup__body">
             <div class="popup__content">
-                <img class="popup__close" id="popupClose"
+                <img class="popup__close" onclick="popupClose()"
                     src="https://www.clipartmax.com/png/full/420-4204636_yin-yang-yin-and-yang-pixel-art.png">
                 <div class="popup__title">Уведомление</div>
                 <div class="popup__text">Что-то пошло не так.</div>
             </div>
         </div>
     </div>
-    <div class="popup3" id="popup3">
+    <div class="popup3" id="popup4">
         <div class="popup__body">
             <div class="popup__content">
-                <img class="popup__close"
+                <img class="popup__close" onclick="popupClose()"
                     src="https://www.clipartmax.com/png/full/420-4204636_yin-yang-yin-and-yang-pixel-art.png">
                 <div class="popup__title">Уведомление</div>
                 <div class="popup__text">Ваше сообщение отправлено!</div>

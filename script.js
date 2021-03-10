@@ -60,10 +60,10 @@ $(document).ready(function () {
   // Burger
 
 
-  $('.header__burger').click(function (event) {
-    $('.header__burger, .header__menu').toggleClass('active');
-    $('body').toggleClass('lock');
-  });
+  // $('.header__burger').click(function (event) {
+  //   $('.header__burger, .header__menu').toggleClass('active');
+  //   $('body').toggleClass('lock');
+  // });
 
 
 
@@ -72,22 +72,6 @@ $(document).ready(function () {
 
   $("#phone").mask("+7 (999) 999-99-99");
 
-
-
-  // Counter
-
-
-  var limit = 1000,
-    chars,
-    output = $('.counter span').text(limit);
-  $('textarea').keyup(function () {
-    chars = $(this).val().length;
-    if (chars >= limit) {
-      output.css('color', '#BF3330').text(limit - chars);
-    } else {
-      output.css('color', '#445f44').text(limit - chars);
-    }
-  });
 
 });
 
@@ -117,12 +101,12 @@ document.addEventListener("DOMContentLoaded", function () {
       });
       if (response.ok) {
         let result = await response.json();
-        $('.popup3').fadeIn(300);
+        popup4.style.display = 'block';
         formPreview.innerHTML = "";
         form.reset();
         form.classList.remove("_sending");
       } else {
-        $('.popup2').fadeIn(300);
+        popup3.style.display = 'block';
         form.classList.remove("_sending");
       }
     }
@@ -136,22 +120,9 @@ document.addEventListener("DOMContentLoaded", function () {
       const input = formReq[index];
       formRemoveError(input);
 
-      if (input.classList.contains("_email")) {
-        if (emailTest(input)) {
-          formAddError(input);
-          error++;
-        }
-      } else if (
-        input.getAttribute("type") === "checkbox" &&
-        input.checked === false
-      ) {
+      if (input.value === "") {
         formAddError(input);
         error++;
-      } else {
-        if (input.value === "") {
-          formAddError(input);
-          error++;
-        }
       }
     }
     return error;
@@ -161,6 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
     input.parentElement.classList.add("_error");
     input.classList.add("_error");
   }
+
   function formRemoveError(input) {
     input.parentElement.classList.remove("_error");
     input.classList.remove("_error");
@@ -173,7 +145,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const formImage = document.getElementById('file');
   const formPreview = document.getElementById('formPreview');
-  const popup = document.getElementById('popup');
 
   formImage.addEventListener('change', () => {
     uploadFile(formImage.files[0]);
@@ -181,16 +152,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function uploadFile(file) {
     if (!['image/jpeg', 'image/png', 'image/gif'].includes(file.type)) {
-      popup1.style.cssText = `
-      z-index: 100;
-      opacity: 1;
-      `;
+      popup2.style.display = 'block';
       formImage.value = '';
       return;
     }
 
     if (file.size > 2 * 1024 * 1024) {
-      $('.popup').fadeIn(300);
+      popup1.style.display = 'block';
       formImage.value = '';
       return;
     }
@@ -207,21 +175,11 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     formPhoto.onerror = function (e) {
-      $('.popup2').fadeIn(300);
+      popup3.style.display = 'block';
     };
 
     formPhoto.readAsDataURL(file);
   }
-
-
-
-  // Popup Close
-
-
-  popupClose.onclick = function () {
-    
-    alert('sdsd');
-  };
 
 
 
@@ -242,7 +200,68 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
+
+  // Counter
+
+
+  countdownTextarea.addEventListener('keyup', function () {
+
+    var element = document.getElementById('count');
+
+    element.innerHTML = 500 - this.value.length;
+
+    if (500 - this.value.length <= 0) {
+      element.style.color = '#BF3330';
+
+    } else {
+      element.style.color = '#445f44';
+    }
+
+  });
+
+
+
+  header__burger.onclick = function (e) {
+
+    header__burger.classList.add("active");
+
+    header__menu.classList.add("active");
+
+    document.body.classList.add("lock");
+
+  };
+
+
+  // header__burger.onclick = function (e) {
+
+  //   header__burger.classList.remove("active");
+
+  //   header__menu.classList.remove("active");
+
+  //   document.body.classList.remove("lock");
+
+  // };
+
+  
+
+
+
 });
+
+
+
+// Popup Close
+
+
+function popupClose() {
+
+  for (var i = 1; i <= 4; i++) {
+    document.getElementById('popup' + i).style.display = "none";
+  }
+}
+
+
+
 
 
 
