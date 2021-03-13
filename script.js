@@ -56,23 +56,6 @@ $(document).ready(function () {
   });
 
 
-
-  // Burger
-
-
-  // $('.header__burger').click(function (event) {
-  //   $('.header__burger, .header__menu').toggleClass('active');
-  //   $('body').toggleClass('lock');
-  // });
-
-
-
-  // Phone Mask
-
-
-  $("#phone").mask("+7 (999) 999-99-99");
-
-
 });
 
 
@@ -102,11 +85,13 @@ document.addEventListener("DOMContentLoaded", function () {
       if (response.ok) {
         let result = await response.json();
         popup4.style.display = 'block';
+        document.body.classList.add("lock");
         formPreview.innerHTML = "";
         form.reset();
         form.classList.remove("_sending");
       } else {
         popup3.style.display = 'block';
+        document.body.classList.add("lock");
         form.classList.remove("_sending");
       }
     }
@@ -153,12 +138,14 @@ document.addEventListener("DOMContentLoaded", function () {
   function uploadFile(file) {
     if (!['image/jpeg', 'image/png', 'image/gif'].includes(file.type)) {
       popup2.style.display = 'block';
+      document.body.classList.add("lock");
       formImage.value = '';
       return;
     }
 
     if (file.size > 2 * 1024 * 1024) {
       popup1.style.display = 'block';
+      document.body.classList.add("lock");
       formImage.value = '';
       return;
     }
@@ -176,6 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     formPhoto.onerror = function (e) {
       popup3.style.display = 'block';
+      document.body.classList.add("lock");
     };
 
     formPhoto.readAsDataURL(file);
@@ -221,29 +209,51 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+  // Burger
+
+
   header__burger.onclick = function (e) {
 
-    header__burger.classList.add("active");
+    this.classList.toggle("active");
 
-    header__menu.classList.add("active");
+    header__menu.classList.toggle("active");
 
-    document.body.classList.add("lock");
+    document.body.classList.toggle("lock");
 
   };
 
 
-  // header__burger.onclick = function (e) {
 
-  //   header__burger.classList.remove("active");
+  // Phone Mask
 
-  //   header__menu.classList.remove("active");
 
-  //   document.body.classList.remove("lock");
+  phone.onfocus = phone.oninput = function (e) {
 
-  // };
+    const template = '+7 (___) ___-__-__',
+      def = template.replace(/\D/g, ""),
+      val = this.value.replace(/\D/g, "");
+    let i = 0,
 
-  
+      newValue = template.replace(/[_\d]/g, function (a) {
+        return i < val.length ? val.charAt(i++) || def.charAt(i) : a;
+      });
 
+    i = newValue.indexOf("_");
+
+    if (i !== -1) {
+      newValue = newValue.slice(0, i);
+    }
+
+    this.value = newValue;
+
+    console.log(newValue);
+  }
+
+  phone.onblur = function (e) {
+    if (this.value.length < 18) {
+      this.value = "";
+    }
+  }
 
 
 });
@@ -257,6 +267,7 @@ function popupClose() {
 
   for (var i = 1; i <= 4; i++) {
     document.getElementById('popup' + i).style.display = "none";
+    document.body.classList.remove("lock");
   }
 }
 

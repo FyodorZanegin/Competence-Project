@@ -43,6 +43,9 @@ body {
     z-index: -1;
 }
 
+body.lock {
+    overflow: hidden;
+}
 
 .wrapper {
     width: 1440px;
@@ -50,6 +53,7 @@ body {
     margin: auto;
     z-index: 1;
 }
+
 
 
 /* Header */
@@ -639,6 +643,7 @@ i[class="far fa-angle-down"] {
     position: absolute;
     right: 0;
 }
+
 .header__burger.active:before {
     transform: rotate(45deg);
     top: 9px;
