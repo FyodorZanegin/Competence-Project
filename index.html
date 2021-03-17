@@ -36,18 +36,14 @@
                             <li><a class="header__link" href="aboutus.html">
                                     <p>О&#160;наc</p>
                                 </a></li>
-                            <li style="margin-right: 0px;"><a class="header__link" id="header__link"
-                                    href="services.html">
+                            <li style="margin-right: 0px;"><a class="header__link" id="header__link">
                                     <p>Услуги</p><i class="far fa-angle-down"></i>
                                 </a>
-                                <ul class="header__submenu">
-                                    <li><a class="submenu__link submenu__arrow"
-                                            href="services.html#services__med">Медицина</a></li>
-                                    <li><a class="submenu__link submenu__border"
-                                            href="services.html#services__man">Менеджмент</a>
+                                <ul id="header__submenu" class="header__submenu">
+                                    <li><a class="submenu__link submenu__arrow" href="services__med.html">Медицина</a></li>
+                                    <li><a class="submenu__link submenu__border" href="services__man.html">Менеджмент</a>
                                     </li>
-                                    <li><a class="submenu__link submenu__border"
-                                            href="services.html#services__ass">Ассессмент</a>
+                                    <li><a class="submenu__link submenu__border" href="services__ass.html">Ассессмент</a>
                                     </li>
                                 </ul>
                             </li>
@@ -160,72 +156,18 @@
                         </div>
                     </div>
                 </section>
-                <div class="reviews">
-                    <p>ОТЗЫВЫ</p>
-                </div>
+               
             </div>
-            <div class="sliderR">
-                <div class="slideR1">
-                    <div class="avatar">
-                        <img src="Img/Reviews/Review1.png">
-                        <p id="first"><span style="font-size: 20px;">Анна Каренина</span> <br> <span
-                                style='opacity: 0.7;'>UX/UI-дизайнер</span></p>
-                    </div>
-                    <p id="second">Спасибо большое Антон, за проделанныую работу, я очень рада что смогла попасть к вам
-                        на тренинг. Хочу передать привет Маме. Имеется спорная точка зрения, гласящая примерно
-                        следующее:
-                        предприниматели в сети интернет, инициированные исключительно синтетически, указаны как
-                        претенденты
-                        на роль ключевых факторов.</p>
-                    <div class="wrapperread">
-                        <div class="readmore"><a href="#">Читать далее</a></div>
-                    </div>
-                </div>
-                <div class="slideR2">
-                    <div class="avatar">
-                        <img src="Img/Reviews/Review2.png">
-                        <p id="first"><span style="font-size: 20px;">Вера Астанова</span> <br> <span
-                                style='opacity: 0.7;'>Веб-дизайнер</span></p>
-                    </div>
-                    <p id="second">Лучший тренинг, на котором я была. Больше правда нигде не была!!</p>
-                </div>
-                <div class="slideR3">
-                    <div class="avatar">
-                        <img src="Img/Reviews/Review3.png">
-                        <p id="first"><span style="font-size: 20px;">Михаил Пушкин</span> <br> <span
-                                style='opacity: 0.7;'>Директор KFC</span></p>
-                    </div>
-                    <p id="second">Довольно хороший тренинг, я много чему научился. Очень компетентные сотрудники,
-                        спасибо им за это. Рассказали как вставить текст рыбу, поэтому я пошёл.) Для современного
-                        мира сложившаяся структура организации не оставляет шанса для инновационных методов управления
-                        процессами.
-                    </p>
-                    <div class="wrapperread">
-                        <div class="readmore"><a href="#">Читать далее</a></div>
-                    </div>
-                </div>
-                <div class="slideR4">
-                    <div class="avatar">
-                        <img src="Img/Reviews/Review4.png">
-                        <p id="first"><span style="font-size: 20px;">Анатолий Петухов</span> <br> <span
-                                style='opacity: 0.7;'>Таксую</span></p>
-                    </div>
-                    <p id="second">Отлично! Класс! Хорошо, красиво.. </p>
-                </div>
-                <div class="slideR5">
-                    <div class="avatar">
-                        <img src="Img/Reviews/Review5.png">
-                        <p id="first"><span style="font-size: 20px;">Елена Плюшина</span> <br> <span
-                                style='opacity: 0.7;'>Домохозяйка</span></p>
-                    </div>
-                    <p id="second">Также как перспективное планирование требует определения и уточнения модели развития.
-                    </p>
-                </div>
-            </div>
+            
         </div>
+
+
+
+
+
         <div class='container'>
-            <div class="writeareview">
-                Написать отзыв
+            <div class="reviews">
+                <p>ОБРАТНАЯ СВЯЗЬ</p>
             </div>
             <form id="form">
                 <div class="writeareview1">
@@ -234,7 +176,9 @@
                             <div class="form__textareaa">
                                 <textarea id="countdownTextarea" placeholder="Сообщение..." class="_req" name="message"
                                     maxlength="500"></textarea>
-                                <div class="counter"><p>Осталось символов: <span id="count">500</span></p></div>
+                                <div class="counter">
+                                    <p>Осталось символов: <span id="count">500</span></p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -248,7 +192,8 @@
                             </div>
                             <div class="input2">
                                 <input type="text" placeholder="Место работы" name="work" id="work" maxlength="30">
-                                <input type="tel" placeholder="Телефон*" class="phone-input _req" name="phone" id="phone" maxlength="11">
+                                <input type="tel" placeholder="Телефон*" class="phone-input _req" name="phone"
+                                    id="phone" maxlength="11">
                             </div>
                             <div class="input3">
                                 <div class="photo">

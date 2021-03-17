@@ -27,35 +27,6 @@ $(document).ready(function () {
   });
 
 
-
-  // Second Slider
-
-
-  $('.sliderR').slick({
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    infinite: false,
-    initialSlide: 2,
-    rows: 1,
-    centerMode: true,
-    responsive: [
-      {
-        breakpoint: 1025,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        }
-      },
-      {
-        breakpoint: 769,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }]
-  });
-
-
 });
 
 
@@ -79,6 +50,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+  // Submneu
+
+  header__link.onclick = function (e) {
+    header__submenu.classList.toggle('active');
+    header__link.classList.toggle('active');
+  };
+
+  header__link.onselectstart = function (e) {
+    return false;
+  };
+
+
+  
   // Form
 
 
@@ -205,7 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
     this.value = this.value.replace(/[^А-ЯЁа-яё]/g, '');
   });
 
-  formSurname.oninput = function() {
+  formSurname.oninput = function () {
     this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1);
   }
 

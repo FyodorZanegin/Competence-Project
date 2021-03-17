@@ -35,18 +35,14 @@
                             <li><a class="header__link" href="aboutus.html">
                                     <p>О&#160;наc</p>
                                 </a></li>
-                            <li style="margin-right: 0px;"><a class="header__link" id="header__link"
-                                    href="services.html">
+                            <li style="margin-right: 0px;"><a class="header__link" id="header__link">
                                     <p>Услуги</p><i class="far fa-angle-down"></i>
                                 </a>
-                                <ul class="header__submenu">
-                                    <li><a class="submenu__link submenu__arrow"
-                                            href="services.html#services__med">Медицина</a></li>
-                                    <li><a class="submenu__link submenu__border"
-                                            href="services.html#services__man">Менеджмент</a>
+                                <ul id="header__submenu" class="header__submenu">
+                                    <li><a class="submenu__link submenu__arrow" href="services__med.html">Медицина</a></li>
+                                    <li><a class="submenu__link submenu__border" href="services__man.html">Менеджмент</a>
                                     </li>
-                                    <li><a class="submenu__link submenu__border"
-                                            href="services.html#services__ass">Ассессмент</a>
+                                    <li><a class="submenu__link submenu__border" href="services__ass.html">Ассессмент</a>
                                     </li>
                                 </ul>
                             </li>
@@ -104,10 +100,54 @@
             </div>
             <script type="text/javascript" charset="utf-8" async
                 src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A512e962f02af7073f61a8a1cbb36c17db7c6aacc3d1bc7b1a649a562905b8d82&amp;width=100%25&amp;height=538&amp;lang=ru_RU&amp;scroll=false"></script>
-            <p class="contacts__text">Ждём Вас!</p>
         </div>
 
-
+        <div class='container'>
+            <div class="reviews">
+                <p>ОБРАТНАЯ СВЯЗЬ</p>
+            </div>
+            <form id="form">
+                <div class="writeareview1">
+                    <div class="forms__column">
+                        <div class="form__textarea">
+                            <div class="form__textareaa">
+                                <textarea id="countdownTextarea" placeholder="Сообщение..." class="_req" name="message"
+                                    maxlength="500"></textarea>
+                                <div class="counter">
+                                    <p>Осталось символов: <span id="count">500</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="forms__column">
+                        <div class="inputs">
+                            <div class="input1">
+                                <input type="text" placeholder="Имя*" class="_req" name="named" id="formName"
+                                    maxlength="15">
+                                <input type="text" placeholder="Фамилия*" class="_req" name="surname" id="formSurname"
+                                    maxlength="15">
+                            </div>
+                            <div class="input2">
+                                <input type="text" placeholder="Место работы" name="work" id="work" maxlength="30">
+                                <input type="tel" placeholder="Телефон*" class="phone-input _req" name="phone"
+                                    id="phone" maxlength="11">
+                            </div>
+                            <div class="input3">
+                                <div class="photo">
+                                    <p>Фото</p>
+                                    <div class="file__preview" id="formPreview"></div>
+                                    <input type="file" id="file" accept=".jpg, .jpeg, .png, .gif">
+                                    <label for="file">
+                                        <p id="filep">Выбрать файл</p>
+                                    </label>
+                                </div>
+                                <input type="submit" name="submit" value="Отправить">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
         <footer class="footer">
             <div class='container'>
                 <div class="footer__body">
