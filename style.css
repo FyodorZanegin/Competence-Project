@@ -137,7 +137,7 @@ body.lock {
     transition: color 0.3s ease 0s;
     line-height: 66px;
     cursor: pointer;
-    display: flex ;
+    display: flex;
 }
 
 .header__list li:hover .header__link {
@@ -146,12 +146,6 @@ body.lock {
 
 #header__link.active {
     color: #3d79b0;
-}
-
-i[class="far fa-angle-down"] {
-    margin-top: 26px;
-    margin-left: 4px;
-    margin-right: 0.75px;
 }
 
 .header__submenu {
@@ -609,8 +603,8 @@ i[class="far fa-angle-down"] {
         color: #fff !important;
     }
 
-    i[class="far fa-angle-down"] {
-        color: #fff !important;
+    #header__link.active {
+        color: #fff;
     }
 
     .header__list li {
@@ -627,12 +621,6 @@ i[class="far fa-angle-down"] {
         font-size: 18px;
         text-decoration: none;
         text-transform: uppercase;
-    }
-
-    i[class="far fa-angle-down"] {
-        margin-top: 25px;
-        margin-left: 4px;
-        margin-right: 0;
     }
 
     .header__list li:hover .header__link {
@@ -1009,7 +997,6 @@ input[type="button"]:active, input[type="button"]:focus {
 
     white-space: nowrap; 
     overflow: hidden; 
-    text-overflow: ellipsis; 
 }
 
 
@@ -1667,6 +1654,7 @@ label:active {
 
 div[class="photo"] p {
     margin: auto 5px auto 10px;
+    
 }
 
 #filep {
@@ -1739,10 +1727,6 @@ div[class="photo"] p {
     font-family: 'Ubuntu';
     font-size: 18px;
     color: #fff;
-    overflow: hidden; 
-    text-overflow: clip; 
-    margin: 18px 0;
-
     z-index: 1;
 }
 
@@ -1774,6 +1758,14 @@ div[class="footer"] img {
 
 .footer__social a img:active {
     filter: brightness(80%);
+}
+
+.footer__copyright426 {
+    display: none;
+}
+
+.footer__copyright375 {
+    display: none;
 }
 
 
@@ -1873,7 +1865,7 @@ form._sending::after {
 /* Popup */
 
 
-.popup, .popup1, .popup2, .popup3 {
+.popup {
     position: fixed;
     width: 100%;
     height: 100%;
@@ -2007,6 +1999,7 @@ form._sending::after {
     }
 
 
+
     /* About Us */
 
 
@@ -2026,19 +2019,54 @@ form._sending::after {
         padding: 15px;
     }
 
-
     .services__photos {
         margin-bottom: 30px;
     }
 
+
+
     /* Footer */
+
 
     .footer {
         margin-top: 60px;
     }
 
+    .footer__copyright426 {
+        display: none !important;
+    }
+
+    .footer__copyright375 {
+        display: block;
+        z-index: 1;
+        font-family: 'Ubuntu';
+        font-size: 18px;
+        color: #fff;
+    }
+
 }
 
+
+
+@media (max-width: 426px) {
+
+
+
+    /* Footer */
+
+
+    .footer__copyright {
+        display: none;
+    }
+
+    .footer__copyright426 {
+        display: block;
+        z-index: 1;
+        font-family: 'Ubuntu';
+        font-size: 18px;
+        color: #fff;
+    }
+}
 
 
 

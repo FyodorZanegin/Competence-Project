@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Burger
 
 
-  header__burger.onclick = function (e) {
+  header__burger.onclick = function () {
 
     this.classList.toggle("active");
 
@@ -52,17 +52,41 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Submneu
 
-  header__link.onclick = function (e) {
-    header__submenu.classList.toggle('active');
-    header__link.classList.toggle('active');
-  };
 
-  header__link.onselectstart = function (e) {
+  header__link.onselectstart = function () {
     return false;
-  };
+  }
+
+  document.addEventListener('click', function (e) {
+
+    if (header__link === e.target) {
+      header__link.classList.toggle('active');
+      header__submenu.classList.toggle('active');
+
+    } else if (header__submenu.classList.contains('active')) {
+      header__submenu.classList.remove('active');
+      header__link.classList.remove('active');
+    }
+
+  });
 
 
-  
+
+  // Popup Close
+
+
+  let popup__close = document.querySelectorAll(".popup__close");
+  for (let i = 0; i < popup__close.length; i++) {
+    popup__close[i].onclick = function () {
+      for (let i = 1; i <= 4; i++) {
+        document.getElementById('popup' + i).style.display = "none";
+        document.body.classList.remove("lock");
+      }
+    }
+  }
+
+ 
+
   // Form
 
 
@@ -178,7 +202,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   formName.addEventListener('keyup', function () {
     this.value = this.value.replace(/[^А-ЯЁа-яё]/g, '');
+
+    if (this.value.length > 15) {
+      this.value = this.value.slice(0, 15);
+    }
+
   });
+
+  formName.oninput = function () {
+    this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1);
+  }
 
 
 
@@ -187,6 +220,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   formSurname.addEventListener('keyup', function () {
     this.value = this.value.replace(/[^А-ЯЁа-яё]/g, '');
+
+    if (this.value.length > 15) {
+      this.value = this.value.slice(0, 15);
+    }
+
   });
 
   formSurname.oninput = function () {
@@ -200,6 +238,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   phone.addEventListener('keyup', function () {
     this.value = this.value.replace(/[\D]/g, '');
+
+    if (this.value.length > 11) {
+      this.value = this.value.slice(0, 11);
+    }
+
   });
 
 
@@ -224,20 +267,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
+
 });
 
 
 
-// Popup Close
-
-
-function popupClose() {
-
-  for (var i = 1; i <= 4; i++) {
-    document.getElementById('popup' + i).style.display = "none";
-    document.body.classList.remove("lock");
-  }
-}
 
 
 
