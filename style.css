@@ -59,6 +59,11 @@ body.lock {
 /* Header */
 
 
+
+.header__submenu {
+    display: none;
+}
+
 .header {
     position: fixed;
     width: 100%;
@@ -125,10 +130,6 @@ body.lock {
     margin: 0 16px;
 }
 
-.header__submenu li {
-    margin-left: -15px;
-}
-
 .header__link {
     color: #000;
     font-family: 'Ubuntu';
@@ -148,57 +149,129 @@ body.lock {
     color: #3d79b0;
 }
 
-.header__submenu {
-    position: absolute;
-    padding: 0;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease 0s;
+.header__arrow {
+    width: 0px;
+    height: 0px;
+    border-top: 6px solid #000;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+    margin-top: 32px;
+    margin-left: 3px;
+    transform: rotate(90deg);
+    transition: transform 0.3s ease 0s, border-top 0.3s ease 0s;
+    z-index: -1;
 }
 
-.header__submenu.active {
-    visibility: visible;
-    opacity: 1;
+.header__arrow.active {
+    transform: rotate(0deg);
+    border-top: 6px solid #3d79b0;
 }
 
-.header__submenu li {
-    font-family: 'Ubuntu';
-    font-size: 15px;
-    line-height: 35px;
-    list-style: none;
-    background: #f7faff;
+.header__list li:hover .header__arrow {
+    border-top: 6px solid #3d79b0;
+}
+
+
+
+/* Submenu Desktop */
+
+.submenu__desktop {
+    max-width: 1110px;
+    max-height: 251px;
+    background: #e9f2fc;
+    padding: 30px;
+    display: flex;
+    border-radius: 2px;
+    box-shadow: 0 0 4px rgba(0,0,0,0.25);
+    position: fixed;
+    top: -100%;
+    right: 0;
+    left: 0;
+    margin: 68px auto 0 auto;
+    z-index: 10;
+    transition: all 0.3s ease 0s;
+    
+}
+
+.submenu__desktop.active {
+    top: 0;
+}
+
+.submenu__item {
+    width: 330px;
+    height: 100%;
+    display: inline-block;
+    box-sizing: border-box;
     position: relative;
-    z-index: 2;
+    text-align: center;
 }
 
-.submenu__link {
-    text-decoration: none;
-    padding: 0 16px;
-    color: #000; 
+.submenu__item:nth-child(2) {
+   margin: 0 30px;
+}
+
+.submenu__med {
+    width: 100%;
+    height: 150px;
+    background: red;
+    margin-bottom: 20px;
+    transition: all 0.3s ease 0s;
+    background-image: url(Img/Submenu/submenu__med.png);
+}
+
+.submenu__man {
+    width: 100%;
+    height: 150px;
+    background: green;
+    margin-bottom: 20px;
+    transition: all 0.3s ease 0s;
+    background-image: url(Img/Submenu/submenu__man.png);
+}
+
+.submenu__ass {
+    width: 100%;
+    height: 150px;
+    background: blue;
+    margin-bottom: 20px;
+    transition: all 0.3s ease 0s;
+    background-image: url(Img/Submenu/submenu__ass.png);
+}
+
+.submenu__item a {
+    font-family: 'Ubuntu';
+    font-size: 18px;
     display: block;
-    transition: color 0.3s ease 0s;
+    text-decoration: none;
+    color: #000;
+    transition: all 0.3s ease 0s;
 }
 
-.submenu__link:hover {
-    color: #3D79B0;
+.submenu__item a:hover {
+    color: #3d79b0;
 }
 
-.submenu__arrow:after {
-    content: "";
-    position: absolute;
-    height: 0;
-    width: 0;
-    left: 1em;
-    top: -6px;
-    border: 6px solid transparent;
-    border-top: 0;
-    border-bottom-color: inherit;
-    color: #f7faff;
+.submenu__item a:hover .submenu__med, .submenu__item a:hover .submenu__man, .submenu__item a:hover .submenu__ass {
+    opacity: 0.65;
 }
 
-.submenu__border {
-    border-top: 1px solid #e9f2fc;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -208,8 +281,6 @@ body.lock {
 .content {
     padding: 66px 0 0 0;
 }
-
-
 
 
 
@@ -643,6 +714,71 @@ body.lock {
     .about__whyUs div:nth-child(1), .about__whyUs div:nth-child(2), .about__whyUs div:nth-child(3)  {
         margin: 0 auto 30px auto;
     }
+
+    
+
+    
+
+    .header__arrow {
+        border-top: 6px solid #fff !important;
+        margin-top: 31px;
+    }
+
+    .header__arrow.active {
+        border-top: 6px solid #fff;
+    }
+    
+    .header__list li:hover .header__arrow {
+        border-top: 6px solid #fff;
+    }
+
+    
+
+    #header__link {
+        color: #fff !important;
+    }
+
+
+    /* Submenu */
+
+
+
+    .header__submenu {
+        position: relative;
+        padding: 0;
+        transition: all 0.3s ease 0s;
+        display: none;
+    }
+
+    .header__submenu.active {
+        display: block;
+    }
+
+    
+
+    .header__submenu li {
+        font-family: 'Ubuntu';
+        font-size: 18px;
+        line-height: 35px;
+        list-style: none;
+        position: relative;
+        z-index: 2;
+    }
+
+    .submenu__link {
+        text-decoration: none;
+        padding: 0;
+        color: #fff !important; 
+        display: block;
+        transition: color 0.3s ease 0s;
+    }
+
+    .submenu__link:hover {
+        color: #fff;
+    }
+
+    
+
 }
 
 
@@ -1157,14 +1293,14 @@ input[type="button"]:active, input[type="button"]:focus {
 }
 
 .portfolio__download:hover {
-    background-color: #BC2943;
-    border: #BC2943;
+    background-color: #498fd1;
+    border: #498fd1;
 }
 
 .portfolio__download:active {
     transition: all 0.1s ease 0s;
-    background-color: #9b1f36;
-    border: #9b1f36;
+    background-color: #2e5b85;
+    border: #2e5b85;
 }
 
 .portfolio__download:active, .portfolio__download:focus {
@@ -2042,6 +2178,15 @@ form._sending::after {
         font-family: 'Ubuntu';
         font-size: 18px;
         color: #fff;
+    }
+
+
+
+    /* Portfolio */
+
+    
+    .portfolio__title {
+        font-size: 22px;
     }
 
 }

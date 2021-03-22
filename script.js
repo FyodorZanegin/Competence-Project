@@ -62,10 +62,14 @@ document.addEventListener("DOMContentLoaded", function () {
     if (header__link === e.target) {
       header__link.classList.toggle('active');
       header__submenu.classList.toggle('active');
+      header__arrow.classList.toggle('active');
+      submenu__desktop.classList.toggle('active');
 
     } else if (header__submenu.classList.contains('active')) {
       header__submenu.classList.remove('active');
       header__link.classList.remove('active');
+      header__arrow.classList.remove('active');
+      submenu__desktop.classList.remove('active');
     }
 
   });
@@ -85,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
- 
+
 
   // Form
 
@@ -115,6 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
         formPreview.innerHTML = "";
         form.reset();
         form.classList.remove("_sending");
+        localStorage.clear();
       } else {
         popup3.style.display = 'block';
         document.body.classList.add("lock");
@@ -252,7 +257,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   countdownTextarea.addEventListener('keyup', function () {
 
-    var element = document.getElementById('count');
+    let element = document.getElementById('count');
 
     element.innerHTML = 500 - this.value.length;
 
@@ -267,6 +272,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+  // Local Storage
+
+
+  let inputs = ["countdownTextarea", "formName", "formSurname", "work", "phone", "file"];
+  for (let formInputs of inputs) {
+    let input = document.getElementById(formInputs);
+    input.value = localStorage.getItem(formInputs);
+    (function (formInputs, input) {
+      input.addEventListener("change", function () {
+        localStorage.setItem(formInputs, input.value);
+      });
+    })(formInputs, input);
+  }
 
 
 });
