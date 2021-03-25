@@ -1998,14 +1998,17 @@ form._sending::after {
 
     #formName {
         margin-bottom: 15px;
+        margin-right: 0;;
     }
 
     #work {
         margin-bottom: 15px;
+        margin-right: 0;
     }
 
     .photo {
         margin-bottom: 15px;
+        margin-right: 0;
     }
 
     .inputs {
