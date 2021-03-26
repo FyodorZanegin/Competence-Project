@@ -1576,40 +1576,6 @@ div[class="photo"] p {
 
 
 
- 
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Footer */
 
 
@@ -1621,7 +1587,7 @@ div[class="photo"] p {
     content: '';
     position: absolute;
     width: 100%;
-    height: 66px;
+    height: 199px;
     background: #3D79B0;
     left: 50%;
     transform: translate(-50%);
@@ -1634,6 +1600,71 @@ div[class="photo"] p {
     align-items: center;
     justify-content: space-between;
     z-index: 2;
+}
+
+.footer__bodyhrhr {
+    display: flex;
+    height: 1px;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.hr {
+    z-index: 1;
+    width: 100%;
+    height: 1px;
+    background: #fff;
+}
+
+.footer__bodyhr {
+    display: flex;
+    height: 132px;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.footer__menu {
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Ubuntu';
+    z-index: 1;
+    text-decoration: none;
+}
+
+.footer__menu a {
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Ubuntu';
+    z-index: 1;
+    text-decoration: none;
+}
+
+.footer__menu a:hover, .footer__menuLeft a:hover {
+    text-decoration: underline;
+}
+
+.footer__menuLeft {
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Ubuntu';
+    z-index: 1;
+    text-decoration: none;
+    
+}
+
+.footer__menuLeft a {
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Ubuntu';
+    z-index: 1;
+    text-decoration: none;
+    text-align: right;
 }
 
 .footer__copyright {
@@ -1671,14 +1702,6 @@ div[class="footer"] img {
 
 .footer__social a img:active {
     filter: brightness(80%);
-}
-
-.footer__copyright426 {
-    display: none;
-}
-
-.footer__copyright375 {
-    display: none;
 }
 
 
@@ -1894,10 +1917,11 @@ form._sending::after {
     }
 }
 
+
+
 @media (max-width: 375px) {
 
     
-
     .h11 {
         margin-top: 60px;
     }
@@ -1950,27 +1974,6 @@ form._sending::after {
 
 
 
-    /* Footer */
-
-
-    .footer {
-        margin-top: 60px;
-    }
-
-    .footer__copyright426 {
-        display: none !important;
-    }
-
-    .footer__copyright375 {
-        display: block;
-        z-index: 1;
-        font-family: 'Ubuntu';
-        font-size: 18px;
-        color: #fff;
-    }
-
-
-
     /* Portfolio */
 
     
@@ -2015,29 +2018,64 @@ form._sending::after {
         height: 357px;
     }
 
-}
-
-
-
-@media (max-width: 426px) {
-
 
 
     /* Footer */
 
 
-    .footer__copyright {
-        display: none;
+    .footer {
+        margin-top: 60px;
     }
 
-    .footer__copyright426 {
+    .footer__bodyhr {
         display: block;
-        z-index: 1;
-        font-family: 'Ubuntu';
-        font-size: 18px;
-        color: #fff;
+        position: relative;
+    }
+
+    .footer__menuLeft {
+        margin-bottom: 15px;
+    }
+
+    .footer__menuLeft a {
+        text-align: left;
+    }
+
+    .footer__menu {
+        margin-bottom: 15px;
+    }
+
+    .footer__menu:nth-child(1) {
+        padding-top: 15px;
+    }
+
+    .footer__bodyhr {
+        height: 100%;
+    }
+
+    .footer:before {
+        height: 346px;
+    }
+
+    .footer__body {
+        display: flex;
+        flex-flow: wrap;
+        height: 100%;
+    }
+
+    .footer__social {
+        order: 1;
+        margin: 15px auto 15px auto;
+    }
+
+    .footer__copyright {
+        order: 2;
+        text-align: center;
+        margin-bottom: 15px;
     }
 }
+
+
+
 
 
 
