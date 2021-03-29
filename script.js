@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  
+
+
+
 
   // Scroll To Title
 
@@ -72,6 +74,10 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   }
+
+
+
+
 
 
 
@@ -269,7 +275,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     })(formInputs, input);
   }
-
 
 
 

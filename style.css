@@ -294,6 +294,66 @@ body.lock {
 
 
 
+/* Form Hidden */
+
+
+.form__hidden {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    z-index: 100;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: none;
+}
+
+.form__hiddenBody {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+}
+
+.form__content {
+    background-color: #fff;
+    max-width: 1130px;
+    padding: 30px;
+    position: relative;
+    border-radius: 2px;
+    margin: 0 auto;
+}
+
+.form__title {
+    font-family: 'RobotoM';
+    font-size: 36px;
+    color: #3D79B0;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+.form__wrapp {
+    width: 100%;
+    display: flex;
+}
+
+.form__close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #000;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+}
+
+
+
 /* Content */
 
 
@@ -1051,9 +1111,9 @@ input[type="button"]:active, input[type="button"]:focus {
     box-sizing: border-box;
     margin: 0px 15px 0px 7.5px;
     display: flex;
-
     white-space: nowrap; 
     overflow: hidden; 
+    background: #fff;
 }
 
 
@@ -1279,7 +1339,7 @@ input[type="button"]:active, input[type="button"]:focus {
         flex: 1 1 auto;
     }
 
-    .writeareview1 {
+    .writeareview1, .form__wrapp {
         flex-direction: column;
     }
 
@@ -1482,7 +1542,6 @@ input[type="text"], input[type="tel"] {
     width: 100%;
     display: flex;
     margin: 30px auto 100px auto;
-    
 }
 
 
@@ -1874,9 +1933,7 @@ form._sending::after {
     font-size: 18px;
     box-sizing: border-box;
     display: flex;
-    /* padding-top: 12px;
-    padding-bottom: 13px;
-    padding-left: 10px; */
+   background: #fff;
 
 }
 

@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="WebIcons/Logo.svg" type="image/svg">
     <title>Ассесмент | "Компетентность в компетенциях"</title>
     <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="form__hidden.js"></script>
 </head>
 
 <body>
@@ -31,8 +32,10 @@
                             <li><a class="header__link" href="aboutus.html">
                                     <p>О&#160;наc</p>
                                 </a></li>
-                                <li style="margin-right: 1px;"><a class="header__link" id="header__link" style="color: #3D79B0;">
-                                    Услуги<span class="header__arrow" id="header__arrow"  style="border-top: 6px solid #3D79B0;"></span>
+                            <li style="margin-right: 1px;"><a class="header__link" id="header__link"
+                                    style="color: #3D79B0;">
+                                    Услуги<span class="header__arrow" id="header__arrow"
+                                        style="border-top: 6px solid #3D79B0;"></span>
                                 </a>
                                 <ul id="header__submenu" class="header__submenu">
                                     <li><a class="submenu__link submenu__arrow" href="services__med.html">Медицина</a>
@@ -61,16 +64,16 @@
         </header>
         <div class="content">
             <div class="slider">
-              
-                    <div class="slide1__content">
-                        <h1 class="main__title">УСЛУГИ</h1>
-                        <div class="btns">
-                            <input type="button" value="Расписание">
-                            <input type="button" value="WhatsApp"
-                                onclick="window.open('https://api.whatsapp.com/send?phone=79152730639')">
-                        </div>
+
+                <div class="slide1__content">
+                    <h1 class="main__title">УСЛУГИ</h1>
+                    <div class="btns">
+                        <input type="button" value="Расписание">
+                        <input type="button" value="WhatsApp"
+                            onclick="window.open('https://api.whatsapp.com/send?phone=79152730639')">
                     </div>
-                    <a href="#title" class="main__pictureArrow"></a>
+                </div>
+                <a href="#title" class="main__pictureArrow"></a>
             </div>
             <div class='container'>
                 <div class="about__title" id="title">АССЕСМЕНТ</div>
@@ -123,7 +126,8 @@
                     <div class="services__subtitleCost">Стоимость</div>
                     <div class="services__price">100 000 - 150 000 руб.<p>Срок обучения: 3 месяца</p>
                     </div>
-                    <div class="services__button"><input type="button" value="Позвонить"></div>
+                    <div class="services__button"><input type="button" value="Оставить заявку" id="services__button">
+                    </div>
                 </div>
             </div>
 
@@ -145,7 +149,8 @@
                             <a href="https://api.whatsapp.com/send?phone=79152730639" target="_blank">
                                 <strong>+7&#160;(915)&#160;273-06-39</strong>
                             </a>
-                            <a href="mailto:info@competence-project.com"><strong>info@competence-project.com</strong></a>
+                            <a
+                                href="mailto:info@competence-project.com"><strong>info@competence-project.com</strong></a>
                         </div>
                     </div>
                     <div class="footer__bodyhrhr">
@@ -158,7 +163,8 @@
                         <div class="footer__social">
                             <a href="https://www.instagram.com/" target="_blank"><img
                                     src="Img/Footer/001-instagram.png"></a>
-                            <a href="https://www.youtube.com/" target="_blank"><img src="Img/Footer/002-youtube.png"></a>
+                            <a href="https://www.youtube.com/" target="_blank"><img
+                                    src="Img/Footer/002-youtube.png"></a>
                             <a href="https://ru-ru.facebook.com/" target="_blank"><img
                                     src="Img/Footer/003-facebook.png"></a>
                         </div>
@@ -169,23 +175,127 @@
 
                 <div class="submenu__item">
                     <a href="services__med.html">
-                    <div class="submenu__med"></div>
-                    Медицинским предсатвителям</a>
+                        <div class="submenu__med"></div>
+                        Медицинским предсатвителям
+                    </a>
                 </div>
-        
+
                 <div class="submenu__item">
                     <a href="services__man.html">
-                    <div class="submenu__man"></div>
-                    Менеджмент</a>
+                        <div class="submenu__man"></div>
+                        Менеджмент
+                    </a>
                 </div>
-        
+
                 <div class="submenu__item">
                     <a style="color: #3d79b0;" href="services__ass.html">
-                    <div style="opacity: 0.65;" class="submenu__ass"></div>
-                  Ассесмент</a>
+                        <div style="opacity: 0.65;" class="submenu__ass"></div>
+                        Ассесмент
+                    </a>
                 </div>
-        
+
             </div>
+
+
+
+
+
+            <div class='form__hidden'>
+                <div class="form__hiddenBody">
+                    <div class="form__content">
+                        <img class="form__close"
+                            src="https://www.clipartmax.com/png/full/420-4204636_yin-yang-yin-and-yang-pixel-art.png">
+                        <div class="form__title">
+                            <p>ОСТАВИТЬ ЗАЯВКУ</p>
+                        </div>
+                        <form id="form">
+                            <div class="form__wrapp">
+                                <div class="forms__column">
+                                    <div class="form__textarea">
+                                        <div class="form__textareaa">
+                                            <textarea id="countdownTextarea" placeholder="Сообщение..." class="_req"
+                                                name="message" maxlength="500"></textarea>
+                                            <div class="counter">
+                                                <p>Осталось символов: <span id="count">500</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="forms__column">
+                                    <div class="inputs">
+                                        <div class="input1">
+                                            <input type="text" placeholder="Имя*" class="_req" name="named"
+                                                id="formName" maxlength="15">
+                                            <input type="text" placeholder="Фамилия*" class="_req" name="surname"
+                                                id="formSurname" maxlength="15">
+                                        </div>
+                                        <div class="input2">
+                                            <input type="text" placeholder="Место работы" name="work" id="work"
+                                                maxlength="30">
+                                            <input type="tel" placeholder="Телефон*" class="phone-input _req"
+                                                name="phone" id="phone" maxlength="11">
+                                        </div>
+                                        <div class="input3">
+                                            <div class="photo">
+                                                <p>Фото</p>
+                                                <div class="file__preview" id="formPreview"></div>
+                                                <input type="file" id="file" accept=".jpg, .jpeg, .png, .gif">
+                                                <label for="file">
+                                                    <p id="filep">Выбрать файл</p>
+                                                </label>
+                                            </div>
+                                            <input type="submit" name="submit" value="Отправить">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="popup" id="popup1">
+                <div class="popup__body">
+                    <div class="popup__content">
+                        <img class="popup__close"
+                            src="https://www.clipartmax.com/png/full/420-4204636_yin-yang-yin-and-yang-pixel-art.png">
+                        <div class="popup__title">Уведомление</div>
+                        <div class="popup__text">Файл должен быть менее 2 МБ.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup" id="popup2">
+                <div class="popup__body">
+                    <div class="popup__content">
+                        <img class="popup__close"
+                            src="https://www.clipartmax.com/png/full/420-4204636_yin-yang-yin-and-yang-pixel-art.png">
+                        <div class="popup__title">Уведомление</div>
+                        <div class="popup__text">Разрешены только изображения.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup" id="popup3">
+                <div class="popup__body">
+                    <div class="popup__content">
+                        <img class="popup__close"
+                            src="https://www.clipartmax.com/png/full/420-4204636_yin-yang-yin-and-yang-pixel-art.png">
+                        <div class="popup__title">Уведомление</div>
+                        <div class="popup__text">Что-то пошло не так.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup" id="popup4">
+                <div class="popup__body">
+                    <div class="popup__content">
+                        <img class="popup__close"
+                            src="https://www.clipartmax.com/png/full/420-4204636_yin-yang-yin-and-yang-pixel-art.png">
+                        <div class="popup__title">Уведомление</div>
+                        <div class="popup__text">Ваше сообщение отправлено!</div>
+                    </div>
+                </div>
+            </div>
+
+
 </body>
 
 </html>

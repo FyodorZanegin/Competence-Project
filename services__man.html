@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="WebIcons/Logo.svg" type="image/svg">
     <title>Менеджмент | "Компетентность в компетенциях"</title>
     <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="form__hidden.js"></script>
 </head>
 
 <body>
@@ -127,7 +128,8 @@
                     <div class="services__subtitleCost">Стоимость</div>
                     <div class="services__price">100 000 - 150 000 руб.<p>Срок обучения: 3 месяца</p>
                     </div>
-                    <div class="services__button"><input type="button" value="Позвонить"></div>
+                    <div class="services__button"><input type="button" value="Оставить заявку" id="services__button">
+                    </div>
                 </div>
             </div>
 
@@ -189,6 +191,100 @@
                   Ассесмент</a>
                 </div>
         
+            </div>
+            <div class='form__hidden'>
+                <div class="form__hiddenBody">
+                    <div class="form__content">
+                        <img class="form__close"
+                            src="https://www.clipartmax.com/png/full/420-4204636_yin-yang-yin-and-yang-pixel-art.png">
+                        <div class="form__title">
+                            <p>ОСТАВИТЬ ЗАЯВКУ</p>
+                        </div>
+                        <form id="form">
+                            <div class="form__wrapp">
+                                <div class="forms__column">
+                                    <div class="form__textarea">
+                                        <div class="form__textareaa">
+                                            <textarea id="countdownTextarea" placeholder="Сообщение..." class="_req"
+                                                name="message" maxlength="500"></textarea>
+                                            <div class="counter">
+                                                <p>Осталось символов: <span id="count">500</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="forms__column">
+                                    <div class="inputs">
+                                        <div class="input1">
+                                            <input type="text" placeholder="Имя*" class="_req" name="named"
+                                                id="formName" maxlength="15">
+                                            <input type="text" placeholder="Фамилия*" class="_req" name="surname"
+                                                id="formSurname" maxlength="15">
+                                        </div>
+                                        <div class="input2">
+                                            <input type="text" placeholder="Место работы" name="work" id="work"
+                                                maxlength="30">
+                                            <input type="tel" placeholder="Телефон*" class="phone-input _req"
+                                                name="phone" id="phone" maxlength="11">
+                                        </div>
+                                        <div class="input3">
+                                            <div class="photo">
+                                                <p>Фото</p>
+                                                <div class="file__preview" id="formPreview"></div>
+                                                <input type="file" id="file" accept=".jpg, .jpeg, .png, .gif">
+                                                <label for="file">
+                                                    <p id="filep">Выбрать файл</p>
+                                                </label>
+                                            </div>
+                                            <input type="submit" name="submit" value="Отправить">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="popup" id="popup1">
+                <div class="popup__body">
+                    <div class="popup__content">
+                        <img class="popup__close"
+                            src="https://www.clipartmax.com/png/full/420-4204636_yin-yang-yin-and-yang-pixel-art.png">
+                        <div class="popup__title">Уведомление</div>
+                        <div class="popup__text">Файл должен быть менее 2 МБ.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup" id="popup2">
+                <div class="popup__body">
+                    <div class="popup__content">
+                        <img class="popup__close"
+                            src="https://www.clipartmax.com/png/full/420-4204636_yin-yang-yin-and-yang-pixel-art.png">
+                        <div class="popup__title">Уведомление</div>
+                        <div class="popup__text">Разрешены только изображения.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup" id="popup3">
+                <div class="popup__body">
+                    <div class="popup__content">
+                        <img class="popup__close"
+                            src="https://www.clipartmax.com/png/full/420-4204636_yin-yang-yin-and-yang-pixel-art.png">
+                        <div class="popup__title">Уведомление</div>
+                        <div class="popup__text">Что-то пошло не так.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup" id="popup4">
+                <div class="popup__body">
+                    <div class="popup__content">
+                        <img class="popup__close"
+                            src="https://www.clipartmax.com/png/full/420-4204636_yin-yang-yin-and-yang-pixel-art.png">
+                        <div class="popup__title">Уведомление</div>
+                        <div class="popup__text">Ваше сообщение отправлено!</div>
+                    </div>
+                </div>
             </div>
 </body>
 
